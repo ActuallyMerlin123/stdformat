@@ -1,0 +1,4 @@
+/Users/gschaiderle/code/stdformat/build/CMakeFiles/stdformat.dir
+/Users/gschaiderle/code/stdformat/build/CMakeFiles/proj.dir
+/Users/gschaiderle/code/stdformat/build/CMakeFiles/edit_cache.dir
+/Users/gschaiderle/code/stdformat/build/CMakeFiles/rebuild_cache.dir
