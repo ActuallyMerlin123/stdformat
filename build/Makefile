@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/Cellar/cmake/3.27.5/bin/cmake
+CMAKE_COMMAND = /opt/homebrew/Cellar/cmake/3.27.7/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/Cellar/cmake/3.27.5/bin/cmake -E rm -f
+RM = /opt/homebrew/Cellar/cmake/3.27.7/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/gschaiderle/code/stdformat
+CMAKE_SOURCE_DIR = /Users/gschaiderle/Code/stdformat
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/gschaiderle/code/stdformat/build
+CMAKE_BINARY_DIR = /Users/gschaiderle/Code/stdformat/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /Users/gschaiderle/code/stdformat/build
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
-	/opt/homebrew/Cellar/cmake/3.27.5/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/opt/homebrew/Cellar/cmake/3.27.7/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/opt/homebrew/Cellar/cmake/3.27.5/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/opt/homebrew/Cellar/cmake/3.27.7/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gschaiderle/code/stdformat/build/CMakeFiles /Users/gschaiderle/code/stdformat/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gschaiderle/Code/stdformat/build/CMakeFiles /Users/gschaiderle/Code/stdformat/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gschaiderle/code/stdformat/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gschaiderle/Code/stdformat/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,18 +129,29 @@ stdformat/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stdformat.dir/build.make CMakeFiles/stdformat.dir/build
 .PHONY : stdformat/fast
 
-#=============================================================================
-# Target rules for targets named proj
+src/Prolog.o: src/Prolog.cc.o
+.PHONY : src/Prolog.o
 
-# Build rule for target.
-proj: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 proj
-.PHONY : proj
+# target to build an object file
+src/Prolog.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stdformat.dir/build.make CMakeFiles/stdformat.dir/src/Prolog.cc.o
+.PHONY : src/Prolog.cc.o
 
-# fast build rule for target.
-proj/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/build
-.PHONY : proj/fast
+src/Prolog.i: src/Prolog.cc.i
+.PHONY : src/Prolog.i
+
+# target to preprocess a source file
+src/Prolog.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stdformat.dir/build.make CMakeFiles/stdformat.dir/src/Prolog.cc.i
+.PHONY : src/Prolog.cc.i
+
+src/Prolog.s: src/Prolog.cc.s
+.PHONY : src/Prolog.s
+
+# target to generate assembly for a file
+src/Prolog.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stdformat.dir/build.make CMakeFiles/stdformat.dir/src/Prolog.cc.s
+.PHONY : src/Prolog.cc.s
 
 src/main.o: src/main.cc.o
 .PHONY : src/main.o
@@ -166,30 +177,6 @@ src/main.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stdformat.dir/build.make CMakeFiles/stdformat.dir/src/main.cc.s
 .PHONY : src/main.cc.s
 
-src/modules/proj.o: src/modules/proj.cc.o
-.PHONY : src/modules/proj.o
-
-# target to build an object file
-src/modules/proj.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/src/modules/proj.cc.o
-.PHONY : src/modules/proj.cc.o
-
-src/modules/proj.i: src/modules/proj.cc.i
-.PHONY : src/modules/proj.i
-
-# target to preprocess a source file
-src/modules/proj.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/src/modules/proj.cc.i
-.PHONY : src/modules/proj.cc.i
-
-src/modules/proj.s: src/modules/proj.cc.s
-.PHONY : src/modules/proj.s
-
-# target to generate assembly for a file
-src/modules/proj.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/src/modules/proj.cc.s
-.PHONY : src/modules/proj.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -198,14 +185,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... proj"
 	@echo "... stdformat"
+	@echo "... src/Prolog.o"
+	@echo "... src/Prolog.i"
+	@echo "... src/Prolog.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/modules/proj.o"
-	@echo "... src/modules/proj.i"
-	@echo "... src/modules/proj.s"
 .PHONY : help
 
 

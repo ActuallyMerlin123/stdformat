@@ -1,0 +1,57 @@
+***/.DS_Store
+
+tests/dev/***
+
+docs/Doxygen/*
+
+.cache
+
+build/*
+!build_debug.sh
+!build_release.sh
+
+scripts/*
+!debug.sh
+!release.sh
+
+bin/*
+
+# Prerequisites
+
+- .d
+
+# Compiled Object files
+
+- .slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+
+- .gch
+*.pch
+
+# Compiled Dynamic libraries
+
+- .so
+*.dylib
+*.dll
+
+# Fortran module files
+
+- .mod
+*.smod
+
+# Compiled Static libraries
+
+- .lai
+*.la
+*.a
+*.lib
+
+# Executables
+
+- .exe
+*.out
+*.app

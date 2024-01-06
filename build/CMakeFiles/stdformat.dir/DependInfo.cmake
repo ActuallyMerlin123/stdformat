@@ -8,7 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/gschaiderle/code/stdformat/src/main.cc" "CMakeFiles/stdformat.dir/src/main.cc.o" "gcc" "CMakeFiles/stdformat.dir/src/main.cc.o.d"
+  "/Users/gschaiderle/Code/stdformat/src/Prolog.cc" "CMakeFiles/stdformat.dir/src/Prolog.cc.o" "gcc" "CMakeFiles/stdformat.dir/src/Prolog.cc.o.d"
+  "/Users/gschaiderle/Code/stdformat/src/main.cc" "CMakeFiles/stdformat.dir/src/main.cc.o" "gcc" "CMakeFiles/stdformat.dir/src/main.cc.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

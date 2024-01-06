@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/Cellar/cmake/3.27.5/bin/cmake
+CMAKE_COMMAND = /opt/homebrew/Cellar/cmake/3.27.7/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/Cellar/cmake/3.27.5/bin/cmake -E rm -f
+RM = /opt/homebrew/Cellar/cmake/3.27.7/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/gschaiderle/code/stdformat
+CMAKE_SOURCE_DIR = /Users/gschaiderle/Code/stdformat
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/gschaiderle/code/stdformat/build
+CMAKE_BINARY_DIR = /Users/gschaiderle/Code/stdformat/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/stdformat.dir/depend.make
@@ -70,35 +70,50 @@ include CMakeFiles/stdformat.dir/progress.make
 include CMakeFiles/stdformat.dir/flags.make
 
 CMakeFiles/stdformat.dir/src/main.cc.o: CMakeFiles/stdformat.dir/flags.make
-CMakeFiles/stdformat.dir/src/main.cc.o: /Users/gschaiderle/code/stdformat/src/main.cc
+CMakeFiles/stdformat.dir/src/main.cc.o: /Users/gschaiderle/Code/stdformat/src/main.cc
 CMakeFiles/stdformat.dir/src/main.cc.o: CMakeFiles/stdformat.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/gschaiderle/code/stdformat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/stdformat.dir/src/main.cc.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stdformat.dir/src/main.cc.o -MF CMakeFiles/stdformat.dir/src/main.cc.o.d -o CMakeFiles/stdformat.dir/src/main.cc.o -c /Users/gschaiderle/code/stdformat/src/main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/gschaiderle/Code/stdformat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/stdformat.dir/src/main.cc.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stdformat.dir/src/main.cc.o -MF CMakeFiles/stdformat.dir/src/main.cc.o.d -o CMakeFiles/stdformat.dir/src/main.cc.o -c /Users/gschaiderle/Code/stdformat/src/main.cc
 
 CMakeFiles/stdformat.dir/src/main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stdformat.dir/src/main.cc.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gschaiderle/code/stdformat/src/main.cc > CMakeFiles/stdformat.dir/src/main.cc.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gschaiderle/Code/stdformat/src/main.cc > CMakeFiles/stdformat.dir/src/main.cc.i
 
 CMakeFiles/stdformat.dir/src/main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stdformat.dir/src/main.cc.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gschaiderle/code/stdformat/src/main.cc -o CMakeFiles/stdformat.dir/src/main.cc.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gschaiderle/Code/stdformat/src/main.cc -o CMakeFiles/stdformat.dir/src/main.cc.s
+
+CMakeFiles/stdformat.dir/src/Prolog.cc.o: CMakeFiles/stdformat.dir/flags.make
+CMakeFiles/stdformat.dir/src/Prolog.cc.o: /Users/gschaiderle/Code/stdformat/src/Prolog.cc
+CMakeFiles/stdformat.dir/src/Prolog.cc.o: CMakeFiles/stdformat.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/gschaiderle/Code/stdformat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/stdformat.dir/src/Prolog.cc.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stdformat.dir/src/Prolog.cc.o -MF CMakeFiles/stdformat.dir/src/Prolog.cc.o.d -o CMakeFiles/stdformat.dir/src/Prolog.cc.o -c /Users/gschaiderle/Code/stdformat/src/Prolog.cc
+
+CMakeFiles/stdformat.dir/src/Prolog.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stdformat.dir/src/Prolog.cc.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gschaiderle/Code/stdformat/src/Prolog.cc > CMakeFiles/stdformat.dir/src/Prolog.cc.i
+
+CMakeFiles/stdformat.dir/src/Prolog.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stdformat.dir/src/Prolog.cc.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gschaiderle/Code/stdformat/src/Prolog.cc -o CMakeFiles/stdformat.dir/src/Prolog.cc.s
 
 # Object files for target stdformat
 stdformat_OBJECTS = \
-"CMakeFiles/stdformat.dir/src/main.cc.o"
+"CMakeFiles/stdformat.dir/src/main.cc.o" \
+"CMakeFiles/stdformat.dir/src/Prolog.cc.o"
 
 # External object files for target stdformat
 stdformat_EXTERNAL_OBJECTS =
 
-stdformat: CMakeFiles/stdformat.dir/src/main.cc.o
-stdformat: CMakeFiles/stdformat.dir/build.make
-stdformat: libproj.dylib
-stdformat: CMakeFiles/stdformat.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/gschaiderle/code/stdformat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable stdformat"
+/Users/gschaiderle/Code/stdformat/bin/stdformat: CMakeFiles/stdformat.dir/src/main.cc.o
+/Users/gschaiderle/Code/stdformat/bin/stdformat: CMakeFiles/stdformat.dir/src/Prolog.cc.o
+/Users/gschaiderle/Code/stdformat/bin/stdformat: CMakeFiles/stdformat.dir/build.make
+/Users/gschaiderle/Code/stdformat/bin/stdformat: CMakeFiles/stdformat.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/gschaiderle/Code/stdformat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /Users/gschaiderle/Code/stdformat/bin/stdformat"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/stdformat.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/stdformat.dir/build: stdformat
+CMakeFiles/stdformat.dir/build: /Users/gschaiderle/Code/stdformat/bin/stdformat
 .PHONY : CMakeFiles/stdformat.dir/build
 
 CMakeFiles/stdformat.dir/clean:
@@ -106,6 +121,6 @@ CMakeFiles/stdformat.dir/clean:
 .PHONY : CMakeFiles/stdformat.dir/clean
 
 CMakeFiles/stdformat.dir/depend:
-	cd /Users/gschaiderle/code/stdformat/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/gschaiderle/code/stdformat /Users/gschaiderle/code/stdformat /Users/gschaiderle/code/stdformat/build /Users/gschaiderle/code/stdformat/build /Users/gschaiderle/code/stdformat/build/CMakeFiles/stdformat.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/gschaiderle/Code/stdformat/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/gschaiderle/Code/stdformat /Users/gschaiderle/Code/stdformat /Users/gschaiderle/Code/stdformat/build /Users/gschaiderle/Code/stdformat/build /Users/gschaiderle/Code/stdformat/build/CMakeFiles/stdformat.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/stdformat.dir/depend
 
