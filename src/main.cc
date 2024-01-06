@@ -42,7 +42,7 @@ int main(int argc, char** argv)
         if (std::strcmp(argv[i], "--version") == 0 ||
                 std::strcmp(argv[i], "-v") == 0) {
             std::printf(_STDFORMAT_VERSION);
-            std::printf("\nCreated by Gleo\n© 2023 - GPL");
+            std::printf("\nCreated by Gleo\n© 2024 - GPL");
             std::printf("\n");
             return EXIT_SUCCESS;
         } else if (std::strcmp(argv[i], "--help") == 0 ||
@@ -59,7 +59,7 @@ int main(int argc, char** argv)
                 "  -p, --prolog FILE    Adds prolog to specified file.\n"
                 "\n"
                 "Created by Gleo\n"
-                "stdformat\t© 2023 - GPL\n";
+                "stdformat\t© 2024 - GPL\n";
             std::printf("%s", helpPage);
             return EXIT_SUCCESS;
         } else if (std::strcmp(argv[i], "--prolog") == 0 ||

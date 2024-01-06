@@ -25,10 +25,15 @@ void form::prolog::fetchDataset(void)
     if (this->_dataset.program == NULL) {
         std::perror("[PROLOG] - The 'program' trait is empty.");
     }
-    // this->_dataset.filename = this->_fetchFilename();
-    // this->_dataset.author = this->_fetchAuthor();
-    // this->_dataset.date = this->_fetchDate();
-    // this->_dataset.language = this->_fetchLanguages();
+
+/***************************** TEMP. DEPRICATED *******************************
+ *
+ *  this->_dataset.filename = this->_fetchFilename();
+ *  this->_dataset.author = this->_fetchAuthor();
+ *  this->_dataset.date = this->_fetchDate();
+ *  this->_dataset.language = this->_fetchLanguages();
+ *
+ *****************************************************************************/
     std::strcpy(this->_dataset.filename, this->_fetchFilename());
     std::strcpy(this->_dataset.author, this->_fetchAuthor());
     std::strcpy(this->_dataset.date, this->_fetchDate());
