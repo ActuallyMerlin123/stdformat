@@ -7,8 +7,6 @@ docs/Doxygen/*
 .cache
 
 build/*
-!build_debug.sh
-!build_release.sh
 
 scripts/*
 !debug.sh
