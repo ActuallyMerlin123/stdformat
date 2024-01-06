@@ -1,0 +1,66 @@
+#!/usr/bin/python3
+
+"""
+    PROGRAM: stdformat {executable python}
+    AUTHOR: Leo G
+    DATE: June 25, 2023
+    DESCRIPTION: Program that automatically formats a script by my standarts
+    LANGUAGE: Python3
+ 
+    CLASSES:
+    VARIABLES:
+    LIBRARIES:
+"""
+
+
+import os
+
+def add_file_prolog(filename):
+    prolog = """\
+ * PROGRAM:
+ * AUTHOR:
+ * DATE:
+ * DESCRIPTION:
+ * LANGUAGE:
+ *
+ * CLASSES:
+ * VARIABLES:
+ * LIBRARIES:"""
+
+    with open(filename, 'r') as file:
+        content = file.readlines()
+
+    modified_content = []
+    if content and content[0].startswith('#!'):
+        modified_content.append(content[0].rstrip() + '\n')
+        modified_content.append('\n')
+        modified_content.append(prolog)
+        modified_content.append('\n\n\n\n')
+        modified_content.extend(content[1:])
+    else:
+        modified_content.append(prolog)
+        modified_content.append('\n\n\n\n')
+        modified_content.extend(content)
+
+    file_name, file_extension = os.path.splitext(filename)
+    new_filename = file_name + '_std' + file_extension
+
+    with open(new_filename, 'w') as new_file:
+        new_file.writelines(modified_content)
+
+    print(f"Modified content written to {new_filename}")
+
+
+import sys
+
+if __name__ == '__main__':
+    if len(sys.argv) != 2:
+        print("Please provide a filename as an argument.")
+        sys.exit(1)
+
+    filename = sys.argv[1]
+    if not os.path.isfile(filename):
+        print("File does not exist.")
+        sys.exit(1)
+
+    add_file_prolog(filename)

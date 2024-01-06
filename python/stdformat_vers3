@@ -1,0 +1,144 @@
+#!/usr/bin/python3
+
+"""
+    PROGRAM: stdformat {executable python} -- version 001
+    AUTHOR: Leo G.
+    DATE: June 25, 2023
+    DESCRIPTION: Adds file prolog
+    LANGUAGE: Python 3
+    
+    FUNCTIONS: file_prolog
+    VARIABLES: filename, prolog, file, content, modified_content, 
+               file_name, file_extension, new_filename, new_file
+    LIBRARIES: os, sys, re, datetime
+"""
+
+""" LIBRARIES """
+import os
+import sys
+import re
+from datetime import datetime
+
+
+""" CLEAR_SCREEN """
+def clear_screen():
+    os.system("clear") # use cls for windows or the "Platform"-method
+clear_screen()
+
+# get current date for "DATE:"
+current_date = datetime.now()
+date = current_date.strftime("%B %d, %Y")
+# detect filename for "PROGRAM:"
+filename = sys.argv[1]
+file_name, file_extension = os.path.splitext(filename)
+program_in = os.path.basename(file_name)
+# ask input for "AUTHOR:"
+author_in = input("Author: ")
+# ask input for "DESCRIPTION:"
+description_in = input("Description: ")
+
+""" MAIN_FUNC """
+def file_prolog(filename):
+    """ LANGUAGE_LIST """
+    languages = {
+        '.py': ('Python 3', '"""', '"""'),
+        '.c': ('C Programming Language', '/*', '*/'),
+        '.cpp': ('C++ Programming Language', '/*', '*/'),
+        '.java': ('Java', '/*', '*/'),
+        '.sh': ('Shell Script', '<<COMMENT', 'COMMENT'),
+        '.html': ('Hyper Text Markup Document', '<!--', '-->'),
+        '.js': ('JavaScript', '/*', '*/'),
+        '.asm': ('Assembly (x86 or ARM)', '/*', '*/'),
+        '.cs': ('C# Programming Language', '/*', '*/'),
+        # Add more file extensions and programming languages as needed
+    }
+
+    language_info = languages.get(file_extension, ('Unknown', '"""', '"""'))
+    language, comment_start, comment_end = language_info
+
+    """ PROLOG_TEMPLATE """
+    prolog = '''\
+{comment_start}
+    PROGRAM: {program_in}
+    AUTHOR: {author_in}
+    DATE: {date}
+    DESCRIPTION: {description_in}
+    LANGUAGE: {language}
+
+    CLASSES: {classes}
+    FUNCTIONS: {functions}
+    VARIABLES: {variables}
+    LIBRARIES: {libraries}
+{comment_end}'''
+
+    with open(filename, 'r') as file:
+        content = file.read()
+
+    # Extract classes
+    classes = [c.strip() for c in re.findall(r'class\s+(\w+)', content)]
+
+    # Extract functions
+    functions = [f.strip() for f in re.findall(r'def\s+(\w+)', content)]
+
+    # Extract variables
+    variables = [v.strip() for v in re.findall(r'\b(\w+)\s*=', content)]
+
+    # Extract libraries
+    libraries = set(re.findall(r'(?:import|from)\s+(\w+)', content))
+
+    """ DETECT_CODE """
+    # Automatically detect functions, classes, variables and libraries
+    # used in target files
+    prolog = prolog.format(
+        comment_start=comment_start,
+        comment_end=comment_end,
+        program_in=program_in,
+        author_in=author_in,
+        date=date,
+        description_in=description_in,
+        language=language,
+        classes=', '.join(classes),
+        functions=', '.join(functions),
+        variables=', '.join(variables),
+        libraries=', '.join(sorted(libraries))
+    )
+
+    """ EXCLUSIONS """
+    modified_content = []
+    if content and content.startswith('#!'): # account for shebang
+        modified_content.append(content.partition('\n')[0])  # Keep the shebang line
+        modified_content.append('\n')  # Add a newline after the shebang
+        modified_content.append(prolog)
+        modified_content.append('\n\n\n\n')  # Add four newlines after the prolog
+        modified_content.append('\n'.join(content.splitlines()[1:]))  # Add the remaining content
+    else:
+        modified_content.append(prolog)
+        modified_content.append('\n\n\n')
+        modified_content.append(content)
+
+    # add _std to the filename before .suffix
+    new_filename = file_name + '_std' + file_extension
+
+    # create new file
+    with open(new_filename, 'w') as new_file:
+        new_file.writelines(modified_content)
+
+    # output to notify user
+    print(f"Modified content written to {new_filename}")
+
+""" FILE_NOT_MODULE """
+if __name__ == '__main__':
+    if len(sys.argv) != 2:
+        print("Please provide a filename as an argument.")
+        sys.exit(1)
+
+    """ FILE_FIND """
+    filename = sys.argv[1]
+    if not os.path.isfile(filename):
+        print("File could not be found.")
+        sys.exit(1)
+
+    """ END_CALL """
+    file_prolog(filename)
+
+""" EOF """
